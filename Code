@@ -1,0 +1,80 @@
+print("Hi, please enter the following information.\n")
+accountNumber = input("Account Number: ")
+PIN = input("PIN: ")
+
+runAgain = "yes"
+balance = 0
+
+def program():
+    
+    while runAgain.lower() == "yes":
+        print("       ")
+        print("       ")
+        print("1. Check Balance\n" + "2. Make a Deposit\n" + "3. Make a Withdraw\n" + "4. Create an Account\n" + "5. Delete Account\n" + "6. Modify Account\n")
+        choice = input("What can I help you with?\n")
+
+
+
+        def checkBalance():
+            if choice == "1":
+                print("Your balance is: " + balance)
+                return balance
+        
+        checkBalance()
+
+
+        def deposit():
+            if choice == "2":
+                depositAmount = input("How much would you like to deposit into the account? ")
+                reassuranceDepo = input("Are you sure you would like to deposit " + "'" + depositAmount + "'" + " into your account? ")
+                if reassuranceDepo.lower() == "yes":
+                    print("Ok.")
+
+                if reassuranceDepo.lower() == "no":
+                    depositAmount = input("How much would you like to withdrawl from the account? ")
+                    reassuranceDepo = input("Are you sure you would like to deposit " + "'" + depositAmount + "'" + " into your account? ")
+                    if reassuranceDepo.lower() == "yes":
+                        print("Ok.")
+                    return reassuranceDepo
+        deposit()
+
+        def withdraw():
+            if choice == "3":
+                withdrawAmount = input("How much would you like to withdrawl from the account? ")
+                reassuranceWithdraw = input("Are you sure you would like to deposit " + "'" + withdrawAmount + "'" + " into your account? ")
+                if reassuranceWithdraw.lower() == "yes":
+                    print("Ok.")
+
+                if reassuranceWithdraw.lower() == "no":
+                    withdrawAmount = input("How much would you like to withdrawl from the account? ")
+                    reassuranceWithdraw = input("Are you sure you would like to deposit " + "'" + withdrawAmount + "'" + " into your account? ")
+                    if reassuranceWithdraw.lower() == "yes":
+                        print("Ok.")
+                    return reassuranceWithdraw
+        withdraw()
+
+        def createAccount():
+            if choice == "4":
+                newAccountNum = input("What would you like your Account Number to be? ")
+                newPin = input("What would you like your account's PIN to be? ")
+        createAccount()
+
+
+        def deleteAccount():
+            if choice == "5":
+                delete = input("Are you sure you want to delete your account? ")
+                if delete.lower() == "yes":
+                    print("Your account has been deleted.")
+        deleteAccount()
+
+
+        def modifyAccount():
+            if choice == "6":
+                modify = input("How would you like to modify your account?")
+        modifyAccount()
+
+
+
+        runAgain = input("Do you need further assistance? Yes/No: ".lower())
+
+program()
